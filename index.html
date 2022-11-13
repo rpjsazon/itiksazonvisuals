@@ -4,19 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Below is the link to icons sources-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/favicon-black.png" type="image/x-icon">
     <title>| Itik Sazon Visuals</title>
   </head>
   <body>
-    <img src="./assets/Logo-text-white-transparent.png" alt="ItikSazonVisuals" width="160">
-    <nav>
-      <a href="#">What I do?</a>
-      <a href="#">About me</a>
-      <a href="#">Contact</a>
-      <button>Get Started</button>
-    </nav>
+    <div id="navigation">
+      <div class="container">
+        <nav>
+          <img src="./assets/Logo-text-white-transparent.png" alt="ItikSazonVisuals" class="logo">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">What I do?</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+          <p>
+            IT Support <span>|</span>
+            Front-End Dev <span>|</span>
+            Photographer <span>|</span>
+            Film Maker  <span>|</span>
+            Licensed Drone Operator
+          </p>
+          <h1>Hi! I'm 
+            <span>Robert Patrick Jordan Sazon</span>
+          </h1>
+        </div>
+      </div> 
+    </div>
+<!----------about------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="./assets/user.jpg" alt="user images">
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>Highly skilled IT Support Technician with almost 7 years of experience. Maintaining smooth-running
+              software and system performance through astute troubleshooting and issue resolution. Manages
+              diverse repair and maintenance tasks with precision and care to enhance IT department functionality
+              and optimise overall company productivity.</p>
+
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+              </div>
+
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li><span>IT Support</span><br>Diverse Culture</li>
+                  <li><span>Front-End Developer</span><br>HTML and CSS</li>
+                  <li><span>Photographer</span><br>Freelance</li>
+                  <li><span>Film Maker</span><br>Cinematographer</li>
+                  <li><span>Licensed Drone Operator</span><br>DJI Mavic 2 Operator</li>
+                  <li><span>Basic Infographic</span><br>User Guide Manual</li>
+                </ul>
+              </div>
+
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li><span>Abu Dhabi University</span><br>IT Support Administrator</li>
+                  <li><span>Hyundai Engineering and Construction</span><br>IT Technician</li>
+                </ul>
+              </div>
+
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li><span>Technological Institute of the Philippines</span><br>Manila, Philippines</li>
+                </ul>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<!----------services------------->
+     
+    <script src="./script/script.js"></script>
   </body>
 </html>
