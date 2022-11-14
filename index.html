@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/favicon-black.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/91a6782aab.js" crossorigin="anonymous"></script>
@@ -14,12 +14,15 @@
       <div class="container">
         <nav>
           <img src="./assets/Logo-text-white-transparent.png" alt="ItikSazonVisuals" class="logo">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">What I do?</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            </ul>
+          <ul id="sidemenu">
+            <li><a href="#navigation">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
+          </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
           <p>
@@ -35,7 +38,7 @@
         </div>
       </div> 
     </div>
-<!----------about------------->
+<!--about-->
     <div id="about">
       <div class="container">
         <div class="row">
@@ -83,7 +86,7 @@
         </div>
       </div>
     </div>
-<!----------services------------->
+<!--services-->
     <div id="services">
       <div class="container">
         <h1 class="sub-title">My Services</h1>
@@ -113,7 +116,7 @@
           </div>
       </div>
     </div>
-<!----------portfolio------------->
+<!--portfolio-->
     <div id="portfolio">
       <div class="container">
         <h1 class="sub-title">My Work</h1>
@@ -123,7 +126,7 @@
             <div class="layer">
               <h3>Work</h3>
               <p>My work is here</p>
-              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></i></a>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
           </div>
           <div class="work">
@@ -131,7 +134,7 @@
             <div class="layer">
               <h3>Work</h3>
               <p>My work is here</p>
-              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></i></a>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
           </div>
           <div class="work">
@@ -139,13 +142,65 @@
             <div class="layer">
               <h3>Work</h3>
               <p>My work is here</p>
-              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></i></a>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
           </div>
         </div>
         <a href="#" class="btn">See more</a>
       </div>
     </div>
+<!--contact-->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>rpjsazon@gmail.com</p>
+            <p><i class="fa-solid fa-mobile-screen"></i>07475110834</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <a href="./assets/RobertPatrickJordanSazonITResume.pdf" download class="btn btn2">Download CV</a>
+          </div>
+
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p><i class="fa-regular fa-copyright"></i> Itik Sazon Visuals | 2022</p>
+      </div>
+    </div>
+
     <script src="./script/script.js"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxQ2i_BIRR_XWYbhySarqo62tAoQakmGDgzYdur0ZA3LL-ZNd3HerDUGBkBbyz3T4mIdQ/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
